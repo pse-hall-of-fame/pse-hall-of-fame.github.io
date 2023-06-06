@@ -1,0 +1,79 @@
+body {
+    background-image: url(hoennbg.jpg);
+    background-position: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    background: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+  }
+
+h2 {
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    background: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    width: max-content;
+    border: 2px solid black;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    border: 2px solid black;
+  }
+
+.info {
+    background: rgba(240,255,255,0.9);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.entry {
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabelem {
+    text-align: center;
+    border: 1px solid black;
+    background-color: #dfdfdf;
+}
+
+.male {
+    color: rgb(63, 63, 216);
+}
+
+.female {
+    color: rgb(180, 70, 156);
+}
