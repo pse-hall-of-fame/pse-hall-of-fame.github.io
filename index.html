@@ -10,7 +10,10 @@
         <script src="addon/jquery/jquery-3.7.0.min.js"></script>
         <script> 
             $(function(){
-              $("#TableContent").load("addon/table.html"); 
+                $("#1.0").load("addon/table1.0.html"); 
+            });
+            $(function(){
+                $("#1.1").load("addon/table1.1.html"); 
             });
         </script> 
     </head>
@@ -20,7 +23,7 @@
         <h2>The Shitpost Emerald Hall of Fame</h1>
         <div class="info">
             <p>This here is a small site I've created to show off the teams people have used to complete my Emerald hack, Pokémon Shitpost Emerald.
-                Teams can be submitted via email to shitpostemeraldsubmissions@gmail.com, or to vyaxultima on Discord. 
+                Teams can be submitted  to vyaxultima on Discord. 
                 Please make it clear that the contact is for this page. For a submission, the following is needed:
                 <ul>
                     <li><b>Your display name.</b> This is the name you want shown on the list. Nothing derogatory.</li>
@@ -41,7 +44,35 @@
             </p>
             <br>
             <h3>Members of the Hall of Fame</h3>
-            <div id="TableContent"></div>
+            <div class="tab">
+                <button class="link" onclick="openVersion(event, '1.0')">v1.0</button>
+                <button class="link" onclick="openVersion(event, '1.1')" id="default">v1.1</button>
+            </div>
+                <div class="hoftable" id="1.0"></div>
+                <div class="hoftable" id="1.1"></div>
         </div>
     </body>
+    <script>
+        document.getElementById("default").click();
+
+        function openVersion(evt, version) {
+            var i, tabcontent, links;
+            var path = "addon/table"+version+".html";
+
+            tabcontent = document.getElementsByClassName("hoftable");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }//end for
+
+            links = document.getElementsByClassName("link");
+            for (i = 0; i < links.length; i++) {
+                links[i].className = links[i].className.replace(" active", "");
+            }//end for
+
+
+
+            document.getElementById(version).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </html>
