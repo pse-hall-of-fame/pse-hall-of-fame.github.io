@@ -8,9 +8,12 @@
         <link rel="stylesheet" href="addon/index.css"/>
         <link rel="icon" href="addon/vyaxicon.png"/>
         <script src="addon/jquery/jquery-3.7.0.min.js"></script>
-        <script> 
+        <script>
             $(function(){
-              $("#TableContent").load("addon/table.html"); 
+              $("#table1x0").load("addon/table1x0.html"); 
+            });
+            $(function(){
+              $("#table1x1").load("addon/table1x1.html"); 
             });
         </script> 
     </head>
@@ -39,9 +42,38 @@
                 </ul>
                 Now, with that out of the way... Here's the Shitpost Emerald Hall of Fame!
             </p>
-            <br>
             <h3>Members of the Hall of Fame</h3>
-            <div id="TableContent"></div>
+            <div class="tab">
+                <button class="link" onclick="openVersion(event, '1.0')">v1.0</button>
+                <button class="link" onclick="openVersion(event, '1.1')" id="default">v1.1</button>
+            </div><br>
+            <div class="hoftable" id="table1x0"></div>
+            <div class="hoftable" id="table1x1"></div>
         </div>
+
+        <script>
+            document.getElementById("default").click();
+    
+            function openVersion(evt, version) {
+                var i, tabcontent, links, tableVer;
+    
+                tabcontent = document.getElementsByClassName("hoftable");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }//end for
+    
+                links = document.getElementsByClassName("link");
+                for (i = 0; i < links.length; i++) {
+                    links[i].className = links[i].className.replace(" active", "");
+                }//end for
+
+                if (version === '1.0') tableVer = "table1x0";
+                else tableVer = "table1x1";
+    
+                document.getElementById(tableVer).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
     </body>
+    
 </html>
