@@ -80,6 +80,7 @@ h3 {
 
 .tab button {
     background-color:lightsteelblue;
+    font-family: courier, courier new, serif;
     padding: 5px;
     cursor: pointer;
     transition: 0.3s;
