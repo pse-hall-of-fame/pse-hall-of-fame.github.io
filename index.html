@@ -15,6 +15,9 @@
             $(function(){
               $("#table1x1").load("addon/table1x1.html"); 
             });
+            $(function(){
+              $("#table1x1").load("addon/table1x2.html"); 
+            });
         </script> 
     </head>
     <body>
@@ -45,10 +48,12 @@
             <h3>Members of the Hall of Fame</h3>
             <div class="tab">
                 <button class="link" onclick="openVersion(event, '1.0')">v1.0</button>
-                <button class="link" onclick="openVersion(event, '1.1')" id="default">v1.1</button>
+                <button class="link" onclick="openVersion(event, '1.1')">v1.1</button>
+                <button class="link" onclick="openVersion(event, '1.2')" id="default">v1.2</button>
             </div><br>
             <div class="hoftable" id="table1x0"></div>
             <div class="hoftable" id="table1x1"></div>
+            <div class="hoftable" id="table1x2"></div>
         </div>
 
         <script>
@@ -68,7 +73,8 @@
                 }//end for
 
                 if (version === '1.0') tableVer = "table1x0";
-                else tableVer = "table1x1";
+                else if (version === '1.1') tableVer = "table1x1";
+                else tableVer = "table1x2";
     
                 document.getElementById(tableVer).style.display = "block";
                 evt.currentTarget.className += " active";
